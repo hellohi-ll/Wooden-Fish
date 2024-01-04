@@ -2,7 +2,7 @@
 by LLT & GYM
 
 ## Overview
-This project is a web-based application that simulates an Electronic Muyu (Wooden Fish), a traditional Buddhist percussion instrument. It's designed for users who want to engage in a meditative practice or just enjoy the experience of using a digital version of the Muyu. \n
+This project is a web-based application that simulates an Electronic Muyu (Wooden Fish), a traditional Buddhist percussion instrument. It's designed for users who want to engage in a meditative practice or just enjoy the experience of using a digital version of the Muyu. 
 
 ## How to Use
 **Playing the Muyu Sound**: Click the wooden fish image button at the bottom of the screen to play the sound. The button will animate slightly to indicate it's been pressed. 
