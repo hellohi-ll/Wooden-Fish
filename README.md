@@ -15,4 +15,4 @@ This project is a web-based application that simulates an Electronic Muyu (Woode
 
 
 ## Note
-This application is designed for entertainment and meditative purposes and is a digital representation of the traditional Wooden Fish used in Buddhist practices. \n
+This application is designed for entertainment and meditative purposes and is a digital representation of the traditional Wooden Fish used in Buddhist practices. 
