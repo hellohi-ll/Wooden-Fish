@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>电子木鱼</title>
+    <style>
+        .text {
+            color: white; 
+            font-size:xx-large; 
+            position:absolute;
+            text-align: center;
+
+            left: 47%;
+            transform: translateX(-50%);
+            animation-duration: 1200ms;
+            animation-name: animation;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: forwards;
+
+            z-index: 2;
+        }
+
+        .countTitle{
+            color: white;
+            font-size: 15px;
+            position: absolute;
+
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .count{
+            color: white;
+            font-size: 15px;
+            position: absolute;
+
+            top: 45px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .inputType{
+            color: white;
+            position: absolute;
+
+            bottom: 2%;
+            left: 50%;
+            transform: translateX(-50%);
+
+            z-index: 2;
+        }
+
+        .button {
+            width: 300px; 
+            height: 300px; 
+            position: absolute;
+            border: 5px black;
+
+            background: url('https://is5-ssl.mzstatic.com/image/thumb/Purple125/v4/ab/53/18/ab531883-167c-5862-9e2d-97492542b3b8/source/200x200bb.jpg'); 
+            background-size: contain;
+
+            bottom: 0%;
+            left: 50%;
+            transform: translateX(-50%);
+            transform-origin: bottom;
+            
+            z-index: 1;
+        }
+
+        .button:active {
+            transform-origin: center bottom;
+
+            animation-duration: 200ms;
+            animation-name: animationButton;
+        }
+
+        .sound{
+            width: 30px;
+            height: 30px;
+
+            filter: invert(100%);
+
+            z-index: 3;
+        }
+
+        @keyframes animation {
+            from {
+                top: 60%;
+                opacity: 100%;
+                transform: scale(1);
+            }
+            to {
+                top:10%; 
+                opacity: 0%;
+                transform: scale(1.5)
+            }
+        }
+
+        @keyframes animationButton {
+            0% {
+                transform: scale(1) translateX(-50%);
+            }
+            40% {
+                transform: scale(0.9) translateX(-50%);
+            }
+            100% {
+                transform: scale(1) translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body style="text-align: center; background-color: black;">
+    <div id="box"></div>
+
+    <div style="position: absolute; right: 0%;display: flex;justify-content: center;">
+        <img id=picture src="https://pic4.zhimg.com/v2-50c5fa714f02db8517ff7cf62629557a_1200x500.jpg" class="sound"></img>
+        <input id="volume" type="range">
+    </div>
+
+    <div class="inputType" style="color: white;  border-bottom: 5px white;"> 许愿
+        <input id="inputT" style="background-color: black; color: white;" type= "text">
+    </div>
+    
+    <div class="countTitle">敲击次数</div>
+    <div class="count" id="count">0</div>
+
+    <button id="button" class="button" onclick="placeTextRandomly()"></button>
+    <audio id="MuYu" src="MuYu.m4a"></audio>
+
+    <script>
+        var box, text;
+        var count = 0;
+
+        document.getElementById('button').addEventListener('click', function() {
+            let audio = document.getElementById('MuYu');
+            audio.volume = document.getElementById('volume').value/100;
+            audio.currentTime = 0;
+
+            audio.play();
+
+            count ++;
+            document.getElementById('count').textContent = count;
+        });
+
+        function placeTextRandomly() {
+            box = document.getElementById('box');  
+            text = document.createElement('text'); 
+
+            preinput = document.getElementById('inputT')
+            input = preinput.value;
+            input = input !== '' ? input : "功德+1";
+            text.textContent = input;
+            
+            text.className = "text"
+            box.appendChild(text);
+
+            let len = calculateLen(text);
+
+            var leftPercentage = 100 * (box.offsetWidth - len)/(box.offsetWidth * 2)
+            text.style.left = leftPercentage + '%';
+
+            setTimeout(removeText,1000);
+        }
+
+        function removeText(){
+            if(box.children != null){
+                box.removeChild(box.children[0]);
+            }
+        }
+
+        function calculateLen(input){
+            var len = input.offsetWidth;
+
+            console.log(len);
+            
+            return len;
+        }
+    </script>
+</body>
+</html>
