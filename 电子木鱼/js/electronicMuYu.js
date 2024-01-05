@@ -29,12 +29,6 @@ function placeTextRandomly() {
     input = preinput.value;
     input = input !== '' ? input : "功德+1";
     
-    if (input === '2002022720050308') {
-        let hiddenText = ['LLT ♥ GYM', '我们要永远在一起', '这是我们的第一个project', '你会看到它嘛', '今天过得开心嘛', '可惜我不在你旁边', '喜欢你', '真的好喜欢', '要开心哦', '想你了']
-        
-        input = hiddenText[Math.floor(Math.random() * (hiddenText.length + 1))];
-    }
-    
     text.textContent = input;
     
     text.className = "text"
