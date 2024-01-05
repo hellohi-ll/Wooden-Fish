@@ -22,10 +22,10 @@ function beingClicked() {
 }
 
 function placeTextRandomly() {
-    box = document.getElementById('box');  
+    box = document.querySelector('#box');  
     text = document.createElement('text'); 
 
-    preinput = document.getElementById('input-text')
+    preinput = document.querySelector('#input-text')
     input = preinput.value;
     input = input !== '' ? input : "功德+1";
     
@@ -70,10 +70,12 @@ function autoPlay() {
         isAutoPlaying = true;
 
         buttonElement.classList.add('is-auto-playing');
+        buttonElement.innerHTML = '暂停播放';
     } else {
         clearInterval(intervalID);
         isAutoPlaying = false;
 
         buttonElement.classList.remove('is-auto-playing');
+        buttonElement.innerHTML = '自动播放';
     }
 } 
