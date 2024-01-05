@@ -1,4 +1,4 @@
-# Electronic-MuYu
+# 电子木鱼
 by LLT & GYM
 
 ## Overview
