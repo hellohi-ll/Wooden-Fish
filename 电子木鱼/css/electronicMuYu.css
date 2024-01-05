@@ -41,7 +41,7 @@
     position: absolute;
 
     border-bottom: 5px;
-    bottom: 2%;
+    bottom: 3%;
     left: 50%;
     transform: translateX(-50%);
 
@@ -74,8 +74,10 @@
     background-color: black;
     color: rgb(200,200,200);
 
-    border-color: rgb(200,200,200);
-    border-width: 10%;
+    box-shadow: inset 0px 0px 5px rgb(200,200,200);
+    vertical-align: middle;
+
+    height: 25px;
 }
 
 .is-auto-playing {
