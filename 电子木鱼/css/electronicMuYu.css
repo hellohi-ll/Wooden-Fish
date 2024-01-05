@@ -1,0 +1,124 @@
+.text {
+    color: white; 
+    font-size: xx-large; 
+    position: absolute;
+    text-align: center;
+
+    left: 47%;
+    transform: translateX(-50%);
+    animation-duration: 1200ms;
+    animation-name: animation;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+
+    z-index: 2;
+}
+
+.count-title{
+    color: white;
+    font-size: 15px;
+    position: absolute;
+
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.count{
+    color: white;
+    font-size: 15px;
+    position: absolute;
+
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.input-type{
+    color: white;
+    position: absolute;
+
+    border-bottom: 5px;
+    bottom: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 2;
+}
+
+.input-box {
+    background-color: black;
+    color: white;
+}
+
+.button {
+    width: 300px; 
+    height: 300px; 
+    position: absolute;
+    border: 5px black;
+
+    background: url('https://is5-ssl.mzstatic.com/image/thumb/Purple125/v4/ab/53/18/ab531883-167c-5862-9e2d-97492542b3b8/source/200x200bb.jpg'); 
+    background-size: contain;
+
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    transform-origin: bottom;
+    
+    z-index: 1;
+}
+
+.auto-play {
+    background-color: black;
+    color: rgb(200,200,200);
+
+    border-color: rgb(200,200,200);
+    border-width: 10%;
+}
+
+.is-auto-playing {
+    color: rgb(100,100,100);
+}
+
+.button:active {
+    transform-origin: center bottom;
+
+    animation-duration: 200ms;
+    animation-name: animation-button;
+}
+
+.sound{
+    width: 30px;
+    height: 30px;
+
+    filter: invert(100%);
+
+    z-index: 3;
+}
+
+@keyframes animation {
+    from {
+        top: 60%;
+        opacity: 100%;
+        transform: scale(1);
+    }
+    to {
+        top:10%; 
+        opacity: 0%;
+        transform: scale(1.5)
+    }
+}
+
+@keyframes animation-button {
+    0% {
+        transform: scale(1) translateX(-50%);
+    }
+    40% {
+        transform: scale(0.9) translateX(-50%);
+    }
+    100% {
+        transform: scale(1) translateX(-50%);
+    }
+}
