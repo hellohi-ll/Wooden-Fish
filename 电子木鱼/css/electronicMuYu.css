@@ -6,6 +6,7 @@
 
     left: 47%;
     transform: translateX(-50%);
+    
     animation-duration: 1200ms;
     animation-name: animation;
     animation-timing-function: ease-in-out;
